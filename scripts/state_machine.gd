@@ -14,14 +14,14 @@ func _ready() -> void:
         current_state = initial_state
 
 
-# Call every frame functions (the way the current state can actyally affect the player))
+# Call every frame functions (the way the current state can continuasly affect the player)
 func _process(delta: float) -> void:
     if current_state:
         current_state.update(delta)
 
 func _physics_process(delta: float) -> void:
     if current_state:
-        current_state._physics_process(delta)   
+        current_state._physics_update(delta)
 
 func _on_child_transitioned(state: State, new_state_name: String) -> void:
     if state != current_state:

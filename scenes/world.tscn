@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://pd8y5yumicks"]
+[gd_scene load_steps=5 format=3 uid="uid://pd8y5yumicks"]
 
 [ext_resource type="Script" uid="uid://db71ft1naj2g4" path="res://scripts/world.gd" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://j32hsddb341d" path="res://scenes/knight.tscn" id="2_rwgxs"]
 [ext_resource type="Script" uid="uid://cj7aotlthymxj" path="res://scripts/label.gd" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://dj7o0curq8eoa" path="res://scenes/player_shadow.tscn" id="4_k0juu"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_nnsk1")
 
 [node name="Knight" parent="." instance=ExtResource("2_rwgxs")]
+z_index = 1
 position = Vector2(174, 203)
 scale = Vector2(3.475, 3.475)
 
@@ -17,3 +19,7 @@ offset_top = 21.0
 offset_right = 177.0
 offset_bottom = 89.0
 script = ExtResource("3_4wyf3")
+
+[node name="Player_shadow" parent="." instance=ExtResource("4_k0juu")]
+position = Vector2(176, 271)
+scale = Vector2(3.8, 3.8)

@@ -10,3 +10,5 @@
 
 [node name="InputHandler" type="Node" parent="."]
 script = ExtResource("1_3vyb7")
+
+[node name="ShadowAnchor" type="Marker2D" parent="."]

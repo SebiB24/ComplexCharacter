@@ -11,5 +11,5 @@ func exit() -> void:
 func update(delta: float) -> void:
     pass
 
-func _physics_process(delta: float) -> void:
+func _physics_update(delta: float) -> void:
     pass
