@@ -1,6 +1,4 @@
-class_name StateOnGround extends State
-
-@onready var player: Player = owner
+class_name StateOnGround extends PlayerState
 
 func update(delta: float) -> void:
     if not player.is_on_ground:

@@ -1,6 +1,4 @@
-class_name StateJump extends State
-
-@onready var player: Player = owner
+class_name StateJump extends PlayerState
 
 func enter() -> void:
     player.get_node("AnimatedSprite2D").play("Jump")
