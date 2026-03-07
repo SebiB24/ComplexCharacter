@@ -1,17 +1,29 @@
 class_name StateRun extends MoveState
 
+@onready var sprite = player.get_node("AnimatedSprite2D")
+
 func enter() -> void:
-	player.get_node("AnimatedSprite2D").play("Run")
+	sprite.play("Run")
 	
 func update(delta: float) -> void:
-	super.update(delta)
+	super(delta)
+	# don't want to stop the entire program untill animation is done.
+	# We just don't want the rest of the code in the function to execute.
+	if sprite.animation == "Turn" and sprite.is_playing():
+		return
+
+	if player.turn:
+		sprite.play("Turn")
+		player.turn = false
+		return
+
 	if player.input_direction == Vector2.ZERO:
 		transitioned.emit(self, "Idle")
-	if player.facing_right:
-		player.get_node("AnimatedSprite2D").flip_h = false
-	else:
-		player.get_node("AnimatedSprite2D").flip_h = true
+		return
+
+	sprite.flip_h = not player.facing_right
+	sprite.play("Run")
 
 func _physics_update(delta: float) -> void:
-	super._physics_update(delta)
+	super(delta)
 	player.direction = player.input_direction.normalized()

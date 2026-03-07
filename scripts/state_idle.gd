@@ -12,3 +12,4 @@ func update(delta: float) -> void:
 	super.update(delta)
 	if player.input_direction != Vector2.ZERO:
 		transitioned.emit(self, "Run")
+		return

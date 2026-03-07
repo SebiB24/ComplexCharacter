@@ -9,6 +9,7 @@ func update(delta: float) -> void:
     player.input_direction.y = 0.0;
     if player.is_on_ground:
         transitioned.emit(self, "Idle")
+        return
 
 func _physics_update(delta: float) -> void:
     player.velocity = player.direction * player.SPEED

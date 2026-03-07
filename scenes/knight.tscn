@@ -240,9 +240,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p2wyf")
 }],
-"loop": true,
-"name": &"Turn_around",
-"speed": 5.0
+"loop": false,
+"name": &"Turn",
+"speed": 10.0
 }]
 
 [node name="Knight" instance=ExtResource("1_3i0j8")]
@@ -254,7 +254,7 @@ shape = SubResource("CapsuleShape2D_k2txo")
 [node name="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8pn50")
-animation = &"Turn_around"
+animation = &"Turn"
 
 [node name="StateMachine" type="Node" parent="." index="3" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("8_14u3r")

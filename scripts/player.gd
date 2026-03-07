@@ -10,6 +10,7 @@ const GRAVITY = 900.0
 var input_direction: Vector2 = Vector2.ZERO
 var is_on_ground: bool = true
 var facing_right: bool = true
+var turn: bool = false
 
 var direction: Vector2 = Vector2.ZERO
 var jump_velocity: float = 0.0
