@@ -3,4 +3,5 @@
 3. check back on the git state project
 
 BUGS:
- 1. previous velocity affects jump
+ 1. previous direction.y affects jump +
+ 2. cant move while jumping
