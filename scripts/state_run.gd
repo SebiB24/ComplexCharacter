@@ -1,7 +1,5 @@
 class_name StateRun extends MoveState
 
-@onready var sprite = player.get_node("AnimatedSprite2D")
-
 func enter() -> void:
 	sprite.play("Run")
 	
