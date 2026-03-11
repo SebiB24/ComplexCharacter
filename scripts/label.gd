@@ -9,3 +9,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	text = "State: " + player.get_node("StateMachine").current_state.name
 	text += "\nFacing Right: " + str(player.facing_right)
+	text += "\nCrouched: " + str(player.is_crouched)
