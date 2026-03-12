@@ -1,6 +1,7 @@
 class_name State extends Node
 
 signal transitioned(state, new_state_name)
+signal revert(state)
 
 func enter() -> void:
     pass

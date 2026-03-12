@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://j32hsddb341d"]
+[gd_scene load_steps=54 format=3 uid="uid://j32hsddb341d"]
 
 [ext_resource type="PackedScene" uid="uid://cbi6jptw4452c" path="res://scenes/player.tscn" id="1_3i0j8"]
 [ext_resource type="Script" uid="uid://bq18yr6pf74xv" path="res://scripts/knight.gd" id="1_5fsgc"]
@@ -19,39 +19,35 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4crol"]
 atlas = ExtResource("9_4ok4f")
-region = Rect2(37, 48, 42, 32)
+region = Rect2(42, 40, 30, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_irm4b"]
 atlas = ExtResource("3_nw3uw")
-region = Rect2(42, 45, 30, 35)
+region = Rect2(162, 40, 30, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m012m"]
 atlas = ExtResource("3_nw3uw")
-region = Rect2(162, 45, 30, 35)
+region = Rect2(282, 40, 30, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vh21"]
 atlas = ExtResource("3_nw3uw")
-region = Rect2(282, 45, 30, 35)
+region = Rect2(402, 40, 30, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgw7t"]
 atlas = ExtResource("3_nw3uw")
-region = Rect2(402, 45, 30, 35)
+region = Rect2(522, 40, 30, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wm0xy"]
 atlas = ExtResource("3_nw3uw")
-region = Rect2(522, 45, 30, 35)
+region = Rect2(642, 40, 30, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvlk4"]
 atlas = ExtResource("3_nw3uw")
-region = Rect2(642, 45, 30, 35)
+region = Rect2(762, 40, 30, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fnu1q"]
 atlas = ExtResource("3_nw3uw")
-region = Rect2(762, 45, 30, 35)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_reytu"]
-atlas = ExtResource("3_nw3uw")
-region = Rect2(882, 45, 30, 35)
+region = Rect2(882, 40, 30, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvyd6"]
 atlas = ExtResource("3_swm0g")
@@ -200,9 +196,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fnu1q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_reytu")
 }],
 "loop": true,
 "name": &"Crouch_walk",
@@ -330,7 +323,7 @@ shape = SubResource("CapsuleShape2D_k2txo")
 [node name="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8pn50")
-animation = &"Crouch_idle"
+animation = &"Crouch_walk"
 
 [node name="StateMachine" type="Node" parent="." index="3" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("8_14u3r")

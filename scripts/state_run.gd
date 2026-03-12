@@ -19,9 +19,12 @@ func update(delta: float) -> void:
 		transitioned.emit(self, "Idle")
 		return
 
+	if player.is_crouched:
+		transitioned.emit(self, "Crouch")
+		return
+
 	sprite.flip_h = not player.facing_right
 	sprite.play("Run")
 
 func _physics_update(delta: float) -> void:
 	super(delta)
-	player.direction = player.input_direction.normalized()

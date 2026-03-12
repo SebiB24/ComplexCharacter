@@ -1,5 +1,9 @@
 class_name MoveState extends StateOnGround
 
+func update(delta: float) -> void:
+    super.update(delta);
+
+
 func _physics_update(delta: float) -> void:
     super._physics_update(delta)
     var was_facing_right = player.facing_right
@@ -11,4 +15,5 @@ func _physics_update(delta: float) -> void:
         if was_facing_right:
             player.turn = true
         player.facing_right = false
-    
+
+    player.direction = player.input_direction.normalized()

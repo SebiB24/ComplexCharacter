@@ -7,6 +7,10 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	text = "State: " + player.get_node("StateMachine").current_state.name
+	var state = "Error"
+	var state_stack = player.get_node("StateMachine").state_stack
+	if state_stack:
+		state = state_stack[-1].name
+	text = "State: " + state
 	text += "\nFacing Right: " + str(player.facing_right)
 	text += "\nCrouched: " + str(player.is_crouched)

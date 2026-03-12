@@ -13,3 +13,5 @@ func update(delta: float) -> void:
 	if player.input_direction != Vector2.ZERO:
 		transitioned.emit(self, "Run")
 		return
+	if player.is_crouched:
+		transitioned.emit(self, "Crouch")
