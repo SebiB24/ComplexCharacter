@@ -1,6 +1,6 @@
 class_name StateIdle extends StateOnGround
 
-func enter() -> void:
+func enter(state: State) -> void:
 	player.direction = Vector2.ZERO
 	player.get_node("AnimatedSprite2D").play("Idle")
 	if player.facing_right:

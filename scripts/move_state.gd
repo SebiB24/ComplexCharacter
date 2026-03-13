@@ -6,6 +6,7 @@ func update(delta: float) -> void:
 
 func _physics_update(delta: float) -> void:
     super._physics_update(delta)
+    player.turn = false
     var was_facing_right = player.facing_right
     if player.direction.x > 0:
         if not was_facing_right:
@@ -15,5 +16,6 @@ func _physics_update(delta: float) -> void:
         if was_facing_right:
             player.turn = true
         player.facing_right = false
+        
 
     player.direction = player.input_direction.normalized()

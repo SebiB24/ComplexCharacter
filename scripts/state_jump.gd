@@ -1,6 +1,6 @@
 class_name StateJump extends StateOffGround
 
-func enter() -> void:
+func enter(state: State) -> void:
 	sprite.play("Jump")
 	player.direction.y = 0.0
 	player.jump_velocity = Player.JUMP_VELOCITY

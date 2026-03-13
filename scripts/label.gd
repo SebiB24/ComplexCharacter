@@ -14,3 +14,4 @@ func _process(delta: float) -> void:
 	text = "State: " + state
 	text += "\nFacing Right: " + str(player.facing_right)
 	text += "\nCrouched: " + str(player.is_crouched)
+	text += '\nTurn: ' + str(player.turn)

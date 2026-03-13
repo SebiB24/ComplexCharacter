@@ -1,11 +1,15 @@
 class_name StateCrouched extends MoveState
 
-func enter() -> void:
-	sprite.play("Crouch_idle")
+func enter(pState: State) -> void:
+	if pState.name == "Idle":
+		sprite.play("Crouch_enter")
 
 func update(delta: float) -> void:
 	if !player.is_crouched:
 		revert.emit(self)
+		return
+
+	if sprite.animation == "Crouch_enter" and sprite.is_playing():
 		return
 	
 	if player.velocity != Vector2.ZERO:
