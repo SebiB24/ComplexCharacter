@@ -3,9 +3,10 @@ class_name Player extends CharacterBody2D
 
 @onready var input_handler = $InputHandler
 
-const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const GRAVITY = 900.0
+
+var speed = 300.0
 
 var input_direction: Vector2 = Vector2.ZERO
 var is_on_ground: bool = true

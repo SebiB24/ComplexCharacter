@@ -13,7 +13,7 @@ func update(delta: float) -> void:
 
 func _physics_update(delta: float) -> void:
 	super(delta);
-	player.velocity = player.direction * player.SPEED
+	player.velocity = player.direction * player.speed
 	player.velocity.y += player.jump_velocity 
 	player.jump_velocity += Player.GRAVITY * delta
 

@@ -2,6 +2,7 @@ class_name StateRun extends MoveState
 
 func enter(pState: State) -> void:
 	sprite.play("Run")
+	player.speed = 300.0
 	
 func update(delta: float) -> void:
 	super(delta)

@@ -343,7 +343,7 @@ shape = SubResource("CapsuleShape2D_k2txo")
 [node name="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8pn50")
-animation = &"Crouch_enter"
+animation = &"Crouch_walk"
 
 [node name="StateMachine" type="Node" parent="." index="3" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("8_14u3r")

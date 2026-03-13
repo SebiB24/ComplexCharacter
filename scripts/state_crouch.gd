@@ -1,6 +1,7 @@
 class_name StateCrouched extends MoveState
 
 func enter(pState: State) -> void:
+	player.speed = 150.0
 	if pState.name == "Idle":
 		sprite.play("Crouch_enter")
 
