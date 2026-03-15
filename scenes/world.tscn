@@ -10,7 +10,7 @@ script = ExtResource("1_nnsk1")
 
 [node name="Knight" parent="." instance=ExtResource("2_rwgxs")]
 z_index = 1
-position = Vector2(174, 203)
+position = Vector2(183, 211)
 scale = Vector2(3.475, 3.475)
 
 [node name="Label" type="Label" parent="."]
@@ -22,4 +22,4 @@ script = ExtResource("3_4wyf3")
 
 [node name="Player_shadow" parent="." instance=ExtResource("4_k0juu")]
 position = Vector2(176, 271)
-scale = Vector2(3.8, 3.8)
+scale = Vector2(3.575, 3.575)

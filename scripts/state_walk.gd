@@ -1,0 +1,33 @@
+class_name StateWalk extends MoveState
+
+func enter(pState: State) -> void:
+	sprite.play("Walk")
+	player.speed = 300.0
+	
+func update(delta: float) -> void:
+	super(delta)
+	if not player.is_on_ground:
+		return
+
+	if player.input_direction == Vector2.ZERO:
+		transitioned.emit(self, "Idle")
+		return
+
+	if player.is_crouched:
+		transitioned.emit(self, "Crouch")
+		return
+	# don't want to stop the entire program untill animation is done.
+	# We just don't want the rest of the code in the function to execute.
+	if sprite.animation == "Turn" and sprite.is_playing():
+		return
+
+	if player.turn:
+		sprite.play("Turn")
+		player.turn = false
+		return
+
+	sprite.flip_h = not player.facing_right
+	sprite.play("Walk")
+
+func _physics_update(delta: float) -> void:
+	super(delta)

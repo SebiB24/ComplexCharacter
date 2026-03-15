@@ -3,7 +3,7 @@ class_name Player extends CharacterBody2D
 
 @onready var input_handler = $InputHandler
 
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 const GRAVITY = 900.0
 
 var speed = 300.0

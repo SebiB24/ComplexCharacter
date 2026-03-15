@@ -1,8 +1,14 @@
 class_name StateOffGround extends PlayerState
 
+func _physics_update(delta: float) -> void: 
+	player.velocity = player.direction * player.speed
+	player.velocity.y += player.jump_velocity 
+	player.jump_velocity += Player.GRAVITY * delta
 
-func _physics_update(delta: float) -> void:
+	# land on ground
+	if player.global_position.y >= player.base_level and player.jump_velocity > 0.0:
+		player.is_on_ground = true
+		player.jump_velocity = 0.0
+		player.velocity.y = 0.0
+		player.global_position.y = player.base_level
     
-    # check if player is falling
-    if player.jump_velocity > 0.0:
-        sprite.play("Fall")
