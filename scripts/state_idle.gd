@@ -1,7 +1,7 @@
-class_name StateIdle extends StateOnGround
+class_name StateIdle extends PlayerState
 
 func enter(state: State) -> void:
-	player.direction = Vector2.ZERO
+	player.velocity = Vector2.ZERO
 	sprite.play("Idle")
 	if player.facing_right:
 		sprite.flip_h = false

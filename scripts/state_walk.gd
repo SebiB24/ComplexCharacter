@@ -6,8 +6,6 @@ func enter(pState: State) -> void:
 	
 func update(delta: float) -> void:
 	super(delta)
-	if not player.is_on_ground:
-		return
 
 	if player.input_direction == Vector2.ZERO:
 		transitioned.emit(self, "Idle")
@@ -16,18 +14,25 @@ func update(delta: float) -> void:
 	if player.is_crouched:
 		transitioned.emit(self, "Crouch")
 		return
-	# don't want to stop the entire program untill animation is done.
-	# We just don't want the rest of the code in the function to execute.
-	if sprite.animation == "Turn" and sprite.is_playing():
+
+	if player.is_running:
+		transitioned.emit(self, "Run")
 		return
 
-	if player.turn:
-		sprite.play("Turn")
-		player.turn = false
+	if(!player.is_on_ground):
+		transitioned.emit(self, "Jump")
 		return
 
-	sprite.flip_h = not player.facing_right
-	sprite.play("Walk")
+	
+	
+	# UNCOMMENT FOR TURN ANIMATION IMPLEMENTATION
+	# # don't want to stop the entire program untill animation is done.
+	# # We just don't want the rest of the code in the function to execute.
+	# if sprite.animation == "Turn" and sprite.is_playing():
+	# 	return
 
-func _physics_update(delta: float) -> void:
-	super(delta)
+	# if player.turn:
+	# 	sprite.play("Turn")
+	# 	player.turn = false
+	# 	return
+

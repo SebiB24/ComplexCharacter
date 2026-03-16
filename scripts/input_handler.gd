@@ -3,6 +3,7 @@ extends Node
 signal move(input_direction: Vector2)
 signal jump()
 signal crouch(value: bool)
+signal run(value: bool)
 
 
 func _process(delta: float) -> void:
@@ -24,3 +25,9 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_released("crouch"):
 		crouch.emit(false)
+	
+	if Input.is_action_pressed("run"):
+		run.emit(true)
+
+	if Input.is_action_just_released("run"):
+		run.emit(false)

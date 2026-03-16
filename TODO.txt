@@ -2,7 +2,8 @@
 2. add some form of error handling for the states
 3. check back on the git state project
 4. ADD STATE STACK +
-5. SEPARATE JUMP AND FALL STATES
+5. SEPARATE JUMP AND FALL STATES +
+6. FIX JUMPING ISSUES +
 
 BUGS:
  1. previous direction.y affects jump +
