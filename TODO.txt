@@ -4,6 +4,7 @@
 4. ADD STATE STACK +
 5. SEPARATE JUMP AND FALL STATES +
 6. FIX JUMPING ISSUES +
+7. FIX OTHER JUMPING BUG +
 
 BUGS:
  1. previous direction.y affects jump +
