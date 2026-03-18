@@ -32,21 +32,10 @@ The state machine is built on a clear inheritance tree to prevent code duplicati
     * `state_jump.gd` - Upward momentum and variable jump heights.
     * `state_fall.gd` - Downward momentum and landing logic.
 
-## 🚀 Getting Started
-
-### Prerequisites
-* [Godot Engine v4.4+](https://godotengine.org/)
-
-### Installation
-1. Clone this repository: `git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git`
-2. Open the Godot Project Manager and click **Import**.
-3. Navigate to the cloned folder and select the `project.godot` file.
-4. Open `world.tscn` and hit **Play** (F5)!
-
 ## 🎮 Controls (Default)
-* **Move:** Left / Right Arrows or A / D
-* **Jump:** Spacebar or Up Arrow
-* **Crouch:** Down Arrow or S
+* **Move:** W/A/S/D
+* **Jump:** Spacebar
+* **Crouch:** Ctrl
 * **Run:** Shift
 
 
