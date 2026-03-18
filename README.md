@@ -1,3 +1,7 @@
+## 🌐 Live Demo
+Play the web export right in your browser here: 
+[[Insert your Vercel/itch.io link here once it's live!]](https://complex-character.vercel.app/)
+
 # Godot 4 Player Movement State Machine
 
 A robust, scalable Finite State Machine (FSM) implementation for 2D character movement in Godot 4.4. 
@@ -5,7 +9,6 @@ A robust, scalable Finite State Machine (FSM) implementation for 2D character mo
 This project demonstrates how to decouple complex character logic into isolated, manageable state scripts using the **Blackboard Pattern** and **Hierarchical States**, preventing the dreaded "spaghetti code" that usually comes with platformer or top-down controllers.
 
 ![Project Thumbnail](Tumbnail.png) 
-*(Note: Replace Tumbnail.png with a gif of your character moving if you have one!)*
 
 ## ✨ Features
 * **Decoupled Logic:** The `Player` acts as the blackboard (storing velocity, inputs, and physical memory), while independent `State` nodes handle the actual behavior.
@@ -46,6 +49,4 @@ The state machine is built on a clear inheritance tree to prevent code duplicati
 * **Crouch:** Down Arrow or S
 * **Run:** Shift
 
-## 🌐 Live Demo
-Play the web export right in your browser here: 
-[Insert your Vercel/itch.io link here once it's live!]
+
