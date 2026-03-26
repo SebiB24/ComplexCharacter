@@ -1,5 +1,9 @@
 class_name StateOffGround extends PlayerState
 
+func update(delta: float) -> void:
+	if player.is_punching:
+		player.is_punching = false
+
 func _physics_update(delta: float) -> void: 
 	player.velocity = player.direction * player.speed
 	player.velocity.y += player.jump_velocity 

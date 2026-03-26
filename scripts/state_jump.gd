@@ -7,6 +7,7 @@ func enter(pState: State) -> void:
 	player.base_level = player.global_position.y
 
 func update(delta: float) -> void:
+	super(delta)
 	if player.is_on_ground:
 		transitioned.emit(self, "Idle")
 		return

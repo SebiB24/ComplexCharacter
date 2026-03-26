@@ -8,4 +8,4 @@
 
 BUGS:
  1. previous direction.y affects jump +
- 2. cant move while jumping
+ 2. in run state while is_running false 

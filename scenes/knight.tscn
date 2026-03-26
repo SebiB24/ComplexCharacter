@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://j32hsddb341d"]
+[gd_scene load_steps=91 format=3 uid="uid://j32hsddb341d"]
 
 [ext_resource type="PackedScene" uid="uid://cbi6jptw4452c" path="res://scenes/player.tscn" id="1_3i0j8"]
 [ext_resource type="Script" uid="uid://bq18yr6pf74xv" path="res://scripts/knight.gd" id="1_5fsgc"]
@@ -13,10 +13,12 @@
 [ext_resource type="Script" uid="uid://c31c5cop6ph2p" path="res://scripts/state_idle.gd" id="9_3cm67"]
 [ext_resource type="Texture2D" uid="uid://dp3x0gmd5q12r" path="res://resources/2D-Pixel-Art-Character-Template/Walk/PlayerWalk 48x48.png" id="9_oi1vv"]
 [ext_resource type="Script" uid="uid://cdstxgeij7kdv" path="res://scripts/state_walk.gd" id="10_3cm67"]
+[ext_resource type="Texture2D" uid="uid://djdh6w5ukgcuq" path="res://resources/2D-Pixel-Art-Character-Template/Punch/Player Punch 64x64.png" id="11_8ko4r"]
 [ext_resource type="Script" uid="uid://b7enwmfrc7h3q" path="res://scripts/state_jump.gd" id="11_w8y5l"]
 [ext_resource type="Script" uid="uid://dpx42n8nbcuqe" path="res://scripts/state_crouch.gd" id="14_c7bgd"]
 [ext_resource type="Script" uid="uid://dlc3a7fn7extc" path="res://scripts/state_fall.gd" id="14_oi1vv"]
 [ext_resource type="Script" uid="uid://dwiaknwxxbivw" path="res://scripts/state_run.gd" id="16_06ia3"]
+[ext_resource type="Script" uid="uid://cied4ggid3mss" path="res://scripts/state_punch.gd" id="19_tpjby"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k2txo"]
 radius = 5.0
@@ -266,6 +268,38 @@ region = Rect2(288, 0, 48, 48)
 atlas = ExtResource("9_oi1vv")
 region = Rect2(336, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u3bi"]
+atlas = ExtResource("11_8ko4r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_370et"]
+atlas = ExtResource("11_8ko4r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjsjy"]
+atlas = ExtResource("11_8ko4r")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v44wv"]
+atlas = ExtResource("11_8ko4r")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkg4j"]
+atlas = ExtResource("11_8ko4r")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syqco"]
+atlas = ExtResource("11_8ko4r")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t7mc"]
+atlas = ExtResource("11_8ko4r")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kp24"]
+atlas = ExtResource("11_8ko4r")
+region = Rect2(448, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8pn50"]
 animations = [{
 "frames": [{
@@ -490,6 +524,35 @@ animations = [{
 "loop": true,
 "name": &"Walk",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u3bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_370et")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjsjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v44wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkg4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syqco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t7mc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kp24")
+}],
+"loop": false,
+"name": &"attack_1",
+"speed": 15.0
 }]
 
 [node name="Knight" instance=ExtResource("1_3i0j8")]
@@ -502,8 +565,8 @@ shape = SubResource("CapsuleShape2D_k2txo")
 texture_filter = 1
 position = Vector2(0.165, 1.225)
 sprite_frames = SubResource("SpriteFrames_8pn50")
-animation = &"Land"
-frame = 8
+animation = &"attack_1"
+frame = 7
 frame_progress = 1.0
 
 [node name="StateMachine" type="Node" parent="." index="3" node_paths=PackedStringArray("initial_state")]
@@ -527,6 +590,9 @@ script = ExtResource("14_oi1vv")
 
 [node name="Run" type="Node" parent="StateMachine" index="5"]
 script = ExtResource("16_06ia3")
+
+[node name="Punch" type="Node" parent="StateMachine" index="6"]
+script = ExtResource("19_tpjby")
 
 [node name="ShadowAnchor" parent="." index="4"]
 position = Vector2(0, 17)

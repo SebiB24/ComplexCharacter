@@ -1,4 +1,4 @@
-class_name MoveState extends PlayerState
+class_name MoveState extends StateOnGround
 
 func check_facing_direction() -> void:
     player.turn = false

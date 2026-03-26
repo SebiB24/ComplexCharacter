@@ -1,4 +1,4 @@
-class_name StateIdle extends PlayerState
+class_name StateIdle extends StateOnGround
 
 func enter(pState: State) -> void:
 	player.velocity = Vector2.ZERO
