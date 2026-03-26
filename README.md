@@ -1,14 +1,14 @@
-## 🌐 Live Demo
-Play the web export right in your browser here: 
-[[Insert your Vercel/itch.io link here once it's live!]](https://complex-character.vercel.app/)
-
 # Godot 4 Player Movement State Machine
 
 A robust, scalable Finite State Machine (FSM) implementation for 2D character movement in Godot 4.4. 
 
 This project demonstrates how to decouple complex character logic into isolated, manageable state scripts using the **Blackboard Pattern** and **Hierarchical States**, preventing the dreaded "spaghetti code" that usually comes with platformer or top-down controllers.
 
-![Project Thumbnail](Tumbnail.png) 
+![Project Thumbnail](demo.gif) 
+
+## 🌐 Live Demo
+Play the web export right in your browser here: 
+[Vercel deploy](https://complex-character.vercel.app/)
 
 ## ✨ Features
 * **Decoupled Logic:** The `Player` acts as the blackboard (storing velocity, inputs, and physical memory), while independent `State` nodes handle the actual behavior.
@@ -32,21 +32,10 @@ The state machine is built on a clear inheritance tree to prevent code duplicati
     * `state_jump.gd` - Upward momentum and variable jump heights.
     * `state_fall.gd` - Downward momentum and landing logic.
 
-## 🚀 Getting Started
-
-### Prerequisites
-* [Godot Engine v4.4+](https://godotengine.org/)
-
-### Installation
-1. Clone this repository: `git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git`
-2. Open the Godot Project Manager and click **Import**.
-3. Navigate to the cloned folder and select the `project.godot` file.
-4. Open `world.tscn` and hit **Play** (F5)!
-
 ## 🎮 Controls (Default)
-* **Move:** Left / Right Arrows or A / D
-* **Jump:** Spacebar or Up Arrow
-* **Crouch:** Down Arrow or S
+* **Move:** W/A/S/D
+* **Jump:** Spacebar
+* **Crouch:** Ctrl
 * **Run:** Shift
 
 
